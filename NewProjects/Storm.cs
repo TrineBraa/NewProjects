@@ -3,11 +3,11 @@ namespace NewProjects
 {
     public class Storm
     {
-        public int _hunger;
-        public int _happiness;
-        public int _cleanliness;
+        private int _hunger;
+        private int _happiness;
+        private int _cleanliness;
 
-        public Storm(int Hunger = 50, int Happiness = 50, int Cleanliness = 50)
+        public Storm(int Hunger = 40, int Happiness = 50, int Cleanliness = 60)
         {
             _hunger = Hunger;
             _happiness = Happiness;
@@ -41,22 +41,25 @@ namespace NewProjects
             Thread.Sleep(1000);
         }
 
-        public void StormNeed()
-        {
-            Console.WriteLine($"Hunger: {_hunger}");
-            Console.WriteLine($"Cleanliness: {_cleanliness}");
-            Console.WriteLine($"Happiness: {_happiness}");
-        }
-
+        
 
         public void ShowStorm()
         {
             while (true)
             {
+               var OriginalColor = Console.ForegroundColor;
+               Console.Clear();
+               Console.WriteLine();
+               Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("Storm is a happy boy!");
+                Console.ForegroundColor = OriginalColor;
                 Console.WriteLine("\tStorm has different needs you have to care for!");
                 Console.WriteLine();
-                StormNeed();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Hunger: {_hunger}");
+                Console.WriteLine($"Cleanliness: {_cleanliness}");
+                Console.WriteLine($"Happiness: {_happiness}");
+                Console.ForegroundColor = OriginalColor;
                 Console.WriteLine();
                 Console.WriteLine("You can choose what you want to take care of");
                 Console.WriteLine("\t1. Feed Storm, you will make him very happy!");
@@ -65,33 +68,36 @@ namespace NewProjects
                 Console.WriteLine("\t4. Return to main menu");
 
 
-                int UserInput = Console.Read();
+                int UserInput = int.Parse(Console.ReadLine());
+
                 if (UserInput == 1)
                 {
-                    Console.Clear();
+                    Console.WriteLine("You give Storm food");
                     FeedStorm();
-                    StormNeed();
+                    Thread.Sleep(1000);
                 }
-                else if (UserInput == 2)
+                else if (UserInput == 2) 
                 {
-                    Console.Clear();
+                    Console.WriteLine("You give Storm a bath");
                     CleanStorm();
-                    StormNeed();
+                    Thread.Sleep(1000);
                 }
                 else if (UserInput == 3)
                 {
-                    Console.Clear();
+                    Console.WriteLine("You pet Storm");
                     PetStorm();
-                    StormNeed();
+                    Thread.Sleep(1000);
+                }
+                else if (UserInput > 4)
+                {
+                    Console.WriteLine("Please pick a valid number!");
+                    Thread.Sleep(1000);
                 }
                 else if (UserInput == 4)
                 {
                     break;
                 }
-                else
-                {
-                    Console.WriteLine("Please write one of the listed numbers number!");
-                }
+                
 
             }
 
