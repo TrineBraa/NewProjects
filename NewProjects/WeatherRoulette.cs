@@ -103,7 +103,7 @@ namespace NewProjects
                     switch (PutOn)
                     {
                         case 0:
-                            Console.WriteLine("It will be abit chilly!");
+                            Console.WriteLine("It will be a bit chilly!");
                             Thread.Sleep(2000);
                             break;
                         case 1:
@@ -155,7 +155,7 @@ namespace NewProjects
                     switch (PutOn)
                     {
                         case 0:
-                            Console.WriteLine("Deffinetly not the best wear for today....");
+                            Console.WriteLine("Definitely not the best wear for today....");
                             Thread.Sleep(2000);
                             break;
                         case 1:
@@ -185,7 +185,7 @@ namespace NewProjects
                             Thread.Sleep(2000);
                             break;
                         case 1:
-                            Console.WriteLine("it's not the atire for winter, go change!");
+                            Console.WriteLine("it's not the attire for winter, go change!");
                             Thread.Sleep(2000);
                             break;
                         case 2:
