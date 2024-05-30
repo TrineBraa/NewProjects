@@ -28,16 +28,16 @@ namespace NewProjects
 
                     int UserInput = Convert.ToInt32(Console.ReadLine());
 
-                    if (UserInput == 0)
-                    {
-                        break;
-                    }
 
+
+                    if (UserInput == 0) 
+                    {
+                       break;
+                    }
                     if (UserInput == 1000)
                     {
                         GuessingGame();
                     }
-                    
                     if (UserInput > SavedNumber)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -57,13 +57,11 @@ namespace NewProjects
                         Console.ForegroundColor = OriginalColor;
 
                     }
-                    
+                
 
 
 
-
-
-                }
+            }
             }
     }
 }
