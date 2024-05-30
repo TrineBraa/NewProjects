@@ -11,22 +11,31 @@ namespace NewProjects
                 int Number = Rnd.Next(1, 100);
                 int SavedNumber = Number;
             while (true)
-                {
+            {
                     var OriginalColor = Console.ForegroundColor;
                    
-                    int UserInput = Convert.ToInt32(Console.ReadLine());
 
            
                     Console.WriteLine("Guess the number game!");
                     Console.WriteLine(
-                        "\tThis game is for you to guess what the secret number is! \n\tYou can guess from 1 to 100, so take a guess!");
+                        "\tThis game is for you to guess what the secret number is! " +
+                        "\n\tYou can guess from 1 to 100, so take a guess!");
                     Console.WriteLine();
-                    Console.WriteLine("Press x to exit the game and return to main menu!");
+                    Console.WriteLine("Press 0 to exit the game and return to main menu!");
                     Console.WriteLine();
                     Console.WriteLine();
-                    if (UserInput == 'x')
+
+
+                    int UserInput = Convert.ToInt32(Console.ReadLine());
+
+                    if (UserInput == 0)
                     {
                         break;
+                    }
+
+                    if (UserInput == 1000)
+                    {
+                        GuessingGame();
                     }
                     
                     if (UserInput > SavedNumber)
@@ -44,15 +53,9 @@ namespace NewProjects
                     else if (UserInput == SavedNumber)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("\t Correct Number! \nYou want to play again? (Y/N)");
-                        string Replay = Console.ReadLine().ToUpper();
+                        Console.WriteLine("\t Correct Number! \nYou want to play again? (1000 =yes / 0 = no");
                         Console.ForegroundColor = OriginalColor;
 
-                        if (Replay == "Y")
-                        {
-                            GuessingGame();
-                        }else if (Replay == "N")
-                        { break; };
                     }
                     
 
