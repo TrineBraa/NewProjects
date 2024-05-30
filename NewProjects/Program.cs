@@ -2,6 +2,7 @@
 
     Storm storm = new Storm();
     WeatherRoulette roulette = new WeatherRoulette();
+    GuessNumber GuessNumber = new GuessNumber();
     Main();
 
     void Main()
@@ -23,6 +24,8 @@
             Console.WriteLine("1) A little pet you can interact with");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("2) Weather roulette, choose the right clothes!");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("3) Guess the number game!");
 
             Console.WriteLine();
 
@@ -54,7 +57,7 @@
                         roulette.HowToDress();
                         break;
                     case "3":
-                        
+                        GuessNumber.GuessingGame();
                         break;
                     default:
                         Console.WriteLine("Please chose a number from the list!");
